@@ -269,7 +269,7 @@ input {
   font-size: 1.7rem;
   line-height: 1.36em;
   padding-right: 0.3em;
-  opacity: 0.4;
+  opacity: 0.6;
   transition: 0.3s;
 }
 
@@ -470,4 +470,14 @@ input {
   color: var(--primary-color);
   font-family: var(--mono-font);
 
+}
+
+/* footer */
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: slategray;
+  color: white;
+  font-family: var(--roboto-font);
 }

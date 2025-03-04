@@ -291,7 +291,7 @@ input {
   padding: 1.1em 2.1em;
   border-radius: 1.56em;
   font-weight: var(--semibold);
-  transition: o.3s;
+  transition: 0.3s;
 }
 
 .button:hover {
@@ -326,15 +326,16 @@ input {
   padding-bottom: 3rem;
 }
 
-.resume__item::before {
-  content: "";
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid var(--primary-color);
+
+.resume__item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  object-fit: cover; 
   position: absolute;
-  background-color: var(--bg-color);
-  left: -8px;
+  left: -21px;
+  top: 0;
+  border: 2px solid var(--primary-color);
 }
 
 .resume__subtitle {
@@ -362,10 +363,20 @@ input {
 }
 
 .skills__titles {
-  margin-bottom: 0.4rem;
+  display: flex; /* Use flexbox to align items horizontally */
+  align-items: center; /* Vertically center the content */
+  gap: 10px; /* Optional, space between the image and name */
 }
 
-/*Header*/
+.skills__data img {
+  width: 40px; 
+  height: 40px; 
+}
+
+
+
+/*Projects*/
+
 .project__categories{
     display:flex;
     column-gap: 3rem;
@@ -377,6 +388,7 @@ input {
     font-weight: var(--bold);
     font-family: var(--mono-font);
     position: relative;
+    
 }
 
 .category__btn:hover{
@@ -412,13 +424,16 @@ input {
 }
 
 .project__item {
+  display: grid;
   grid-template-columns: 5fr 7fr;
+  gap: 1.5rem;
+  align-items: center;
 }
 
 .project__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .projects__data {
@@ -443,6 +458,7 @@ input {
 .tags li{
   display: inline-block;
   margin-right: 0.6rem;
+  margin-bottom: 0.5rem;
   box-shadow: 0 1px 4px rgb(0 0 0 / 14%);
   padding: 0.3rem 0.6rem;
   border-radius: 0.2rem;

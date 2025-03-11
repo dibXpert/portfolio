@@ -279,8 +279,8 @@ input {
 
 /* hello*/
 .hello__details {
-  margin-bottom: 1.67em;
-  text-align: justify;
+  margin-bottom: 1em;
+  text-align:center;
 }
 
 /* Buttons*/
@@ -516,7 +516,15 @@ input {
 .contact__section a {
   text-decoration: none;
   color: var(--text-color);
+  opacity: 0.7;
   font-weight: var(--medium);
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Hover Effect */
+.contact__section a:hover {
+  opacity: 1;
+  text-decoration: underline; /* Subtle underline effect */
 }
 
 
@@ -528,4 +536,282 @@ footer {
   background-color: slategray;
   color: white;
   font-family: var(--roboto-font);
+}
+
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media screen and (max-width: 768px) {
+    
+  /* NAVIGATION MENU */
+  .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+  }
+
+  .nav__list {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: var(--bg-color);
+      position: absolute;
+      top: var(--header-height);
+      left: 0;
+      padding: 20px;
+      border-top: 1px solid var(--border-color);
+  }
+
+  .nav__list.show {
+      display: flex;
+  }
+
+  .nav__toggle {
+      display: block;
+      font-size: 1.5rem;
+      cursor: pointer;
+  }
+
+  /* HOME SECTION */
+  .home__container {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+  }
+
+  .home__image {
+      max-width: 150px;
+      margin: 0 auto;
+  }
+
+  .home__data {
+      text-align: center;
+  }
+
+  /* HELLO SECTION */
+  .hello__details {
+      text-align: center;
+  }
+
+  /* RESUME & EXPERIENCE */
+  .resume__container {
+      grid-template-columns: 1fr; /* Single column layout */
+      gap: 2rem;
+  }
+
+  .resume__item {
+      padding-left: 0;
+      text-align: center;
+  }
+
+  .resume__item img {
+      position: relative;
+      left: 0;
+  }
+
+  /* SKILLS SECTION */
+  .skills__container {
+      grid-template-columns: 1fr; /* Stack items */
+      gap: 2rem;
+  }
+
+  .skills__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  /* PROJECTS SECTION */
+  .projects__container {
+      grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  .project__item {
+      grid-template-columns: 1fr;
+      text-align: center;
+  }
+
+  .project__img {
+      max-width: 100%;
+      margin-bottom: 10px;
+  }
+
+  /* CONTACT SECTION */
+  .contact__grid {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .contact-name {
+      font-size: 2rem;
+      text-align: center;
+  }
+
+  .contact__section {
+      text-align: center;
+      padding-left: 0;
+      width: 100%;
+  }
+
+  .contact__section ul {
+      padding: 0;
+  }
+
+  /* FOOTER */
+  footer {
+      text-align: center;
+      padding: 10px;
+  }
+}
+
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media screen and (max-width: 1024px) {
+  /* Resume & Skills */
+  .resume__container, .skills__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Projects */
+  .projects__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Contact */
+  .contact__grid {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .contact__section {
+    text-align: center;
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Navigation */
+  .nav__list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background: var(--bg-color);
+    padding: 20px;
+  }
+
+  .nav__list.show {
+    display: flex;
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+
+  /* Home Section */
+  .home__container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home__image {
+    max-width: 180px;
+    margin-bottom: 20px;
+  }
+
+  .home__data {
+    text-align: center;
+  }
+
+  /* Resume & Skills */
+  .resume__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .resume__item {
+    padding-left: 0;
+    text-align: center;
+    border-left: none;
+  }
+
+  .resume__item p{
+    text-align: center;
+  }
+
+  .resume__item img {
+    position: relative;
+    left: 0;
+    margin-bottom: 10px;
+  }
+
+  /* Skills */
+  .skills__container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .skills__list {
+    justify-content: center;
+  }
+
+  /* Projects */
+  .projects__container {
+    grid-template-columns: 1fr;
+  }
+
+  .project__item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .project__img {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Contact */
+  .contact__grid {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-name {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .contact__section {
+    text-align: center;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Adjust typography for small screens */
+  .home__name, .contact-name {
+    font-size: 2rem;
+  }
+
+  .resume__container, .skills__container, .projects__container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__grid {
+    padding: 30px;
+  }
 }
